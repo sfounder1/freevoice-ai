@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
+import WaitlistForm from "@/components/b2b/WaitlistForm";
 
 export const metadata: Metadata = {
   title: "AI Voice Agent for Real Estate Agents & Brokers | Never Lose a Lead Again",
@@ -309,38 +310,101 @@ export default function ForBusinessesPage() {
 
       {/* Pricing */}
       <section className="py-20 bg-slate-50">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="p-8 text-center">
-            <p className="text-sm font-medium text-orange-600 mb-2">
-              Simple Pricing. No Surprises.
-            </p>
-            <p className="text-4xl font-bold text-slate-900">
-              $450<span className="text-lg font-normal text-slate-500">/mo</span>
-            </p>
-            <p className="text-slate-500 mt-1">+ $250 one-time setup fee</p>
-            <ul className="mt-6 space-y-3 text-left max-w-sm mx-auto">
-              {included.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2 text-sm text-slate-600"
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
+            Simple Pricing. No Surprises.
+          </h2>
+          <p className="text-center text-slate-500 max-w-xl mx-auto mb-12">
+            Try it risk-free — your first month is on us.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Launch Offer */}
+            <Card className="p-8 text-center ring-2 ring-orange-600 relative">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap">
+                Limited Time Offer
+              </span>
+              <p className="text-sm font-medium text-orange-600 mb-1">
+                First Month
+              </p>
+              <p className="text-5xl font-bold text-slate-900">
+                $0<span className="text-lg font-normal text-slate-500">/mo</span>
+              </p>
+              <p className="text-slate-500 mt-1 text-sm">+ $250 one-time setup fee</p>
+              <p className="mt-3 text-xs text-slate-400">
+                Then $450/mo &bull; Cancel anytime
+              </p>
+              <ul className="mt-6 space-y-3 text-left">
+                {included.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm text-slate-600"
+                  >
+                    <CheckCircle2 className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <Button
+                  href="mailto:shehryar@freevoice.ai?subject=First Month Free — Real Estate AI Agent"
+                  size="lg"
+                  className="w-full"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8">
-              <Button
-                href="mailto:shehryar@freevoice.ai?subject=Free Demo Request — Real Estate"
-                size="lg"
-              >
-                Get a Free Demo &rarr;
-              </Button>
-            </div>
-            <p className="mt-4 text-xs text-slate-400">
-              No long-term contracts. Cancel anytime.
-            </p>
-          </Card>
+                  Claim Free Month &rarr;
+                </Button>
+              </div>
+            </Card>
+
+            {/* Regular */}
+            <Card className="p-8 text-center">
+              <p className="text-sm font-medium text-slate-400 mb-1">
+                Regular Price
+              </p>
+              <p className="text-5xl font-bold text-slate-900">
+                $450<span className="text-lg font-normal text-slate-500">/mo</span>
+              </p>
+              <p className="text-slate-500 mt-1 text-sm">+ $250 one-time setup fee</p>
+              <p className="mt-3 text-xs text-slate-400">
+                No contracts &bull; Cancel anytime
+              </p>
+              <ul className="mt-6 space-y-3 text-left">
+                {included.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm text-slate-600"
+                  >
+                    <CheckCircle2 className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <Button
+                  href="mailto:shehryar@freevoice.ai?subject=Free Demo Request — Real Estate"
+                  size="lg"
+                  variant="outline"
+                  className="w-full"
+                >
+                  Get a Free Demo &rarr;
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Waitlist */}
+      <section className="py-20 bg-white">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-2">
+            Join the Waitlist
+          </h2>
+          <p className="text-slate-500 mb-8">
+            Spots are limited. Drop your info and we&apos;ll reach out within 24
+            hours to get your AI agent set up.
+          </p>
+          <WaitlistForm />
         </div>
       </section>
 
@@ -352,14 +416,14 @@ export default function ForBusinessesPage() {
           </h2>
           <p className="mt-4 text-slate-400 max-w-xl mx-auto">
             While you&apos;re closing deals, your AI agent is answering the next
-            one. Get set up in 48 hours.
+            one. First month free — get set up in 48 hours.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              href="mailto:shehryar@freevoice.ai?subject=Free Demo Request — Real Estate"
+              href="mailto:shehryar@freevoice.ai?subject=First Month Free — Real Estate AI Agent"
               size="lg"
             >
-              Get a Free Demo
+              Claim Your Free Month
             </Button>
           </div>
           <p className="mt-6 text-sm text-slate-500">
