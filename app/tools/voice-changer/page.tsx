@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import VoiceChanger from "@/components/tools/VoiceChanger";
+import RelatedTools from "@/components/tools/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Free AI Voice Changer Online",
@@ -113,6 +114,8 @@ export default function VoiceChangerPage() {
               ))}
             </div>
           </section>
+
+          <RelatedTools currentSlug="voice-changer" />
         </div>
       </div>
     </div>

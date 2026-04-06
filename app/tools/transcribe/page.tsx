@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Transcriber from "@/components/tools/Transcriber";
+import RelatedTools from "@/components/tools/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Free AI Audio Transcription Online",
@@ -112,6 +113,8 @@ export default function TranscribePage() {
               ))}
             </div>
           </section>
+
+          <RelatedTools currentSlug="transcribe" />
         </div>
       </div>
     </div>

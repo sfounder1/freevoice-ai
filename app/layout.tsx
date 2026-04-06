@@ -32,6 +32,27 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "FreeVoice.ai",
+  url: "https://freevoice.ai",
+  description:
+    "Free AI voice tools — text-to-speech, transcription, voice changer, and more. No signup required.",
+  applicationCategory: "MultimediaApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  creator: {
+    "@type": "Organization",
+    name: "FreeVoice.ai",
+    url: "https://freevoice.ai",
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -40,6 +61,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

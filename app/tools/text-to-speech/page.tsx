@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import TextToSpeech from "@/components/tools/TextToSpeech";
+import RelatedTools from "@/components/tools/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Free AI Text-to-Speech Online",
@@ -112,6 +113,8 @@ export default function TextToSpeechPage() {
               ))}
             </div>
           </section>
+
+          <RelatedTools currentSlug="text-to-speech" />
         </div>
       </div>
     </div>
