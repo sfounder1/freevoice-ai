@@ -34,7 +34,7 @@ export default function Hero() {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button href="/tools" size="lg">
-            Start Using Tools &rarr;
+            Browse Free Tools
           </Button>
           <Button
             href="/for-businesses"
