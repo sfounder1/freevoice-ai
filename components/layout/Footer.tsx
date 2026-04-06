@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { AudioWaveform, X } from "lucide-react";
+import { AudioWaveform, Instagram, X } from "lucide-react";
 
 export default function Footer() {
   const [showContact, setShowContact] = useState(false);
@@ -19,6 +19,15 @@ export default function Footer() {
             <p className="mt-2 text-sm max-w-xs">
               Every AI voice tool, completely free. No signup required.
             </p>
+            <a
+              href="https://www.instagram.com/freevoice.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-4 text-sm hover:text-white transition-colors"
+            >
+              <Instagram className="h-4 w-4" />
+              @freevoice.ai
+            </a>
           </div>
 
           <div className="flex gap-12">
