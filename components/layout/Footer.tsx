@@ -52,6 +52,8 @@ export default function Footer() {
                   <a
                     href="mailto:hello@freevoice.ai"
                     className="hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Contact
                   </a>
