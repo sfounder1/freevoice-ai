@@ -45,6 +45,24 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-3">Company</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="mailto:hello@freevoice.ai"
+                    className="hover:text-white transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <Link href="/terms" className="hover:text-white transition-colors">
+                    Terms &amp; Conditions
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 

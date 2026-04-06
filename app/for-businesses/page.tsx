@@ -225,36 +225,6 @@ export default function ForBusinessesPage() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
-            What Business Owners Say
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="p-6">
-              <p className="text-slate-600 italic">
-                &ldquo;We used to miss 20+ calls a week. Now every single one
-                gets answered and booked. It paid for itself in the first
-                week.&rdquo;
-              </p>
-              <p className="mt-4 text-sm font-medium text-slate-500">
-                — [Placeholder] Restaurant Owner, NYC
-              </p>
-            </Card>
-            <Card className="p-6">
-              <p className="text-slate-600 italic">
-                &ldquo;Our clients love that they can book appointments at 10pm.
-                Setup was easy, and the AI sounds surprisingly natural.&rdquo;
-              </p>
-              <p className="mt-4 text-sm font-medium text-slate-500">
-                — [Placeholder] Salon Owner, LA
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="py-20 bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -270,7 +240,10 @@ export default function ForBusinessesPage() {
             </Button>
           </div>
           <p className="mt-6 text-sm text-slate-500">
-            Or call us: (xxx) xxx-xxxx
+            Or email us:{" "}
+            <a href="mailto:hello@freevoice.ai" className="text-slate-300 hover:text-white">
+              hello@freevoice.ai
+            </a>
           </p>
         </div>
       </section>
