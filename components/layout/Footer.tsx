@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
-import { AudioWaveform } from "lucide-react";
+import { useState } from "react";
+import { AudioWaveform, X } from "lucide-react";
 
 export default function Footer() {
+  const [showContact, setShowContact] = useState(false);
+
   return (
     <footer className="bg-slate-950 text-slate-400">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -49,14 +54,12 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-white mb-3">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a
-                    href="mailto:hello@freevoice.ai"
+                  <button
+                    onClick={() => setShowContact(true)}
                     className="hover:text-white transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     Contact
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <Link href="/terms" className="hover:text-white transition-colors">
@@ -72,6 +75,35 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} FreeVoice.ai. All rights reserved.
         </div>
       </div>
+
+      {/* Contact Popup */}
+      {showContact && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+          onClick={() => setShowContact(false)}
+        >
+          <div
+            className="bg-white rounded-xl shadow-2xl p-8 max-w-sm mx-4 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowContact(false)}
+              className="absolute top-3 right-3 text-slate-400 hover:text-slate-600"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              For Business Inquiries
+            </h3>
+            <a
+              href="mailto:hello@freevoice.ai"
+              className="text-blue-600 hover:underline text-lg"
+            >
+              hello@freevoice.ai
+            </a>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
