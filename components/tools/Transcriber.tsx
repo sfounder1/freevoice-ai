@@ -19,19 +19,16 @@ const languages = [
   "Korean",
 ];
 
-const DEMO_TRANSCRIPT = `This is a demo transcription. When connected to our AI backend, your actual audio will be transcribed here with timestamps and speaker detection. The transcription supports 50+ languages with 99% accuracy.`;
-
 export default function Transcriber() {
   const [file, setFile] = useState<File | null>(null);
   const [language, setLanguage] = useState(languages[0]);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState("");
   const [copied, setCopied] = useState(false);
-  const [toast, setToast] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const acceptedTypes =
-    ".mp3,.wav,.m4a,.ogg,.webm,.mp4,.mov";
+  const acceptedTypes = ".mp3,.wav,.m4a,.ogg,.webm,.mp4,.mov";
 
   const handleFile = (f: File) => {
     if (f.size > 25 * 1024 * 1024) {
@@ -40,6 +37,7 @@ export default function Transcriber() {
     }
     setFile(f);
     setResult("");
+    setError(null);
   };
 
   const handleDrop = (e: React.DragEvent) => {
@@ -48,16 +46,34 @@ export default function Transcriber() {
     if (f) handleFile(f);
   };
 
-  const handleTranscribe = () => {
+  const handleTranscribe = async () => {
     if (!file) return;
     setLoading(true);
     setResult("");
-    setTimeout(() => {
+    setError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("language", language);
+
+      const res = await fetch("/api/transcribe", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || `Request failed (${res.status})`);
+      }
+
+      setResult(data.text);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Something went wrong");
+    } finally {
       setLoading(false);
-      setResult(DEMO_TRANSCRIPT);
-      setToast(true);
-      setTimeout(() => setToast(false), 4000);
-    }, 3000);
+    }
   };
 
   const handleCopy = () => {
@@ -78,9 +94,9 @@ export default function Transcriber() {
 
   return (
     <div className="relative">
-      {toast && (
-        <div className="fixed top-20 right-4 z-50 bg-slate-900 text-white text-sm px-4 py-3 rounded-lg shadow-lg animate-pulse">
-          Demo mode — transcription will be connected soon.
+      {error && (
+        <div className="fixed top-20 right-4 z-50 bg-red-600 text-white text-sm px-4 py-3 rounded-lg shadow-lg">
+          {error}
         </div>
       )}
 

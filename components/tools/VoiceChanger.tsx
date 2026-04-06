@@ -14,6 +14,78 @@ import {
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 
+function createImpulseResponse(
+  ctx: OfflineAudioContext,
+  duration: number,
+  decay: number
+): AudioBuffer {
+  const length = ctx.sampleRate * duration;
+  const impulse = ctx.createBuffer(2, length, ctx.sampleRate);
+  for (let ch = 0; ch < 2; ch++) {
+    const data = impulse.getChannelData(ch);
+    for (let i = 0; i < length; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, decay);
+    }
+  }
+  return impulse;
+}
+
+function encodeWav(buffer: AudioBuffer): Blob {
+  const numChannels = buffer.numberOfChannels;
+  const sampleRate = buffer.sampleRate;
+  const length = buffer.length * numChannels * 2 + 44;
+  const out = new ArrayBuffer(length);
+  const view = new DataView(out);
+
+  const writeString = (offset: number, str: string) => {
+    for (let i = 0; i < str.length; i++)
+      view.setUint8(offset + i, str.charCodeAt(i));
+  };
+
+  writeString(0, "RIFF");
+  view.setUint32(4, length - 8, true);
+  writeString(8, "WAVE");
+  writeString(12, "fmt ");
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, numChannels, true);
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * numChannels * 2, true);
+  view.setUint16(32, numChannels * 2, true);
+  view.setUint16(34, 16, true);
+  writeString(36, "data");
+  view.setUint32(40, buffer.length * numChannels * 2, true);
+
+  let offset = 44;
+  for (let i = 0; i < buffer.length; i++) {
+    for (let ch = 0; ch < numChannels; ch++) {
+      const sample = Math.max(-1, Math.min(1, buffer.getChannelData(ch)[i]));
+      view.setInt16(offset, sample < 0 ? sample * 0x8000 : sample * 0x7fff, true);
+      offset += 2;
+    }
+  }
+
+  return new Blob([out], { type: "audio/wav" });
+}
+
+async function getAudioBuffer(
+  source: File | string
+): Promise<AudioBuffer> {
+  const audioCtx = new AudioContext();
+  let arrayBuffer: ArrayBuffer;
+
+  if (source instanceof File) {
+    arrayBuffer = await source.arrayBuffer();
+  } else {
+    const res = await fetch(source);
+    arrayBuffer = await res.arrayBuffer();
+  }
+
+  const decoded = await audioCtx.decodeAudioData(arrayBuffer);
+  audioCtx.close();
+  return decoded;
+}
+
 export default function VoiceChanger() {
   const [file, setFile] = useState<File | null>(null);
   const [recording, setRecording] = useState(false);
@@ -23,17 +95,19 @@ export default function VoiceChanger() {
   const [reverb, setReverb] = useState(false);
   const [echo, setEcho] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [processed, setProcessed] = useState(false);
-  const [toast, setToast] = useState(false);
+  const [processedUrl, setProcessedUrl] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
+  const processedBlobRef = useRef<Blob | null>(null);
 
   const handleFile = (f: File) => {
     setFile(f);
     setRecordedUrl(null);
-    setProcessed(false);
+    setProcessedUrl(null);
+    setError(null);
   };
 
   const handleDrop = (e: React.DragEvent) => {
@@ -57,7 +131,8 @@ export default function VoiceChanger() {
       recorder.start();
       mediaRecorderRef.current = recorder;
       setRecording(true);
-      setProcessed(false);
+      setProcessedUrl(null);
+      setError(null);
     } catch {
       alert("Microphone access denied. Please allow microphone access to record.");
     }
@@ -68,24 +143,108 @@ export default function VoiceChanger() {
     setRecording(false);
   };
 
-  const handleApply = () => {
+  const handleApply = async () => {
     setLoading(true);
-    setProcessed(false);
-    setTimeout(() => {
+    setProcessedUrl(null);
+    setError(null);
+
+    try {
+      const source = file || recordedUrl;
+      if (!source) return;
+
+      const inputBuffer = await getAudioBuffer(source);
+
+      // Calculate output duration based on speed/pitch
+      // playbackRate combines speed and pitch: speed * 2^(pitch/12)
+      const pitchRate = Math.pow(2, pitch / 12);
+      const combinedRate = speed * pitchRate;
+      const outputDuration = inputBuffer.duration / combinedRate;
+
+      // Add extra time for reverb/echo tails
+      const tailTime = reverb ? 2.5 : echo ? 1.0 : 0;
+      const totalDuration = outputDuration + tailTime;
+
+      const offlineCtx = new OfflineAudioContext(
+        inputBuffer.numberOfChannels,
+        Math.ceil(totalDuration * inputBuffer.sampleRate),
+        inputBuffer.sampleRate
+      );
+
+      const sourceNode = offlineCtx.createBufferSource();
+      sourceNode.buffer = inputBuffer;
+      sourceNode.playbackRate.value = combinedRate;
+
+      let lastNode: AudioNode = sourceNode;
+
+      // Reverb
+      if (reverb) {
+        const convolver = offlineCtx.createConvolver();
+        convolver.buffer = createImpulseResponse(offlineCtx, 2.5, 2.0);
+        const dry = offlineCtx.createGain();
+        dry.gain.value = 0.7;
+        const wet = offlineCtx.createGain();
+        wet.gain.value = 0.3;
+        const merger = offlineCtx.createGain();
+
+        lastNode.connect(dry);
+        lastNode.connect(convolver);
+        convolver.connect(wet);
+        dry.connect(merger);
+        wet.connect(merger);
+        lastNode = merger;
+      }
+
+      // Echo
+      if (echo) {
+        const delay = offlineCtx.createDelay(1.0);
+        delay.delayTime.value = 0.3;
+        const feedback = offlineCtx.createGain();
+        feedback.gain.value = 0.4;
+        const dry = offlineCtx.createGain();
+        dry.gain.value = 1.0;
+        const merger = offlineCtx.createGain();
+
+        lastNode.connect(dry);
+        lastNode.connect(delay);
+        delay.connect(feedback);
+        feedback.connect(delay);
+        delay.connect(merger);
+        dry.connect(merger);
+        lastNode = merger;
+      }
+
+      lastNode.connect(offlineCtx.destination);
+      sourceNode.start(0);
+
+      const renderedBuffer = await offlineCtx.startRendering();
+      const wavBlob = encodeWav(renderedBuffer);
+
+      processedBlobRef.current = wavBlob;
+      setProcessedUrl(URL.createObjectURL(wavBlob));
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Failed to process audio");
+    } finally {
       setLoading(false);
-      setProcessed(true);
-      setToast(true);
-      setTimeout(() => setToast(false), 4000);
-    }, 2000);
+    }
+  };
+
+  const handleDownload = () => {
+    if (!processedBlobRef.current) return;
+    const url = URL.createObjectURL(processedBlobRef.current);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "voice-changed.wav";
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   const hasInput = file || recordedUrl;
 
   return (
     <div className="relative">
-      {toast && (
-        <div className="fixed top-20 right-4 z-50 bg-slate-900 text-white text-sm px-4 py-3 rounded-lg shadow-lg animate-pulse">
-          Demo mode — voice processing will be connected soon.
+      {error && (
+        <div className="fixed top-20 right-4 z-50 bg-red-600 text-white text-sm px-4 py-3 rounded-lg shadow-lg">
+          {error}
         </div>
       )}
 
@@ -166,7 +325,7 @@ export default function VoiceChanger() {
                     onClick={() => {
                       setFile(null);
                       setRecordedUrl(null);
-                      setProcessed(false);
+                      setProcessedUrl(null);
                     }}
                     className="text-slate-400 hover:text-slate-600"
                   >
@@ -270,13 +429,16 @@ export default function VoiceChanger() {
             </Button>
           </div>
 
-          {processed && (
+          {processedUrl && (
             <div className="border border-slate-200 rounded-lg p-4 bg-slate-50">
               <div className="flex items-center justify-between">
-                <audio controls className="w-full max-w-md">
-                  <source src="" type="audio/mpeg" />
-                </audio>
-                <Button variant="outline" size="sm" className="ml-4 shrink-0">
+                <audio controls className="w-full max-w-md" src={processedUrl} />
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="ml-4 shrink-0"
+                  onClick={handleDownload}
+                >
                   <Download className="h-4 w-4 mr-1" />
                   Download
                 </Button>
