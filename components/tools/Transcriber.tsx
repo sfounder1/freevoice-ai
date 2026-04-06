@@ -107,14 +107,14 @@ export default function Transcriber() {
               Upload Audio or Video
             </label>
             <div
-              className="border-2 border-dashed border-slate-300 rounded-lg p-8 text-center cursor-pointer hover:border-blue-400 transition-colors"
+              className="border-2 border-dashed border-slate-300 rounded-lg p-8 text-center cursor-pointer hover:border-orange-400 transition-colors"
               onClick={() => inputRef.current?.click()}
               onDragOver={(e) => e.preventDefault()}
               onDrop={handleDrop}
             >
               {file ? (
                 <div className="flex items-center justify-center gap-3">
-                  <FileAudio className="h-5 w-5 text-blue-600" />
+                  <FileAudio className="h-5 w-5 text-orange-600" />
                   <span className="text-sm text-slate-700 font-medium">
                     {file.name}
                   </span>
@@ -158,7 +158,7 @@ export default function Transcriber() {
               Language
             </label>
             <select
-              className="w-full border border-slate-300 rounded-lg p-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-slate-300 rounded-lg p-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-500"
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             >

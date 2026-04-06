@@ -24,9 +24,9 @@ export default function RelatedTools({ currentSlug }: RelatedToolsProps) {
             <Link
               key={tool.slug}
               href={`/tools/${tool.slug}`}
-              className="flex items-start gap-3 border border-slate-200 rounded-lg p-4 hover:border-blue-300 hover:bg-blue-50/50 transition-colors"
+              className="flex items-start gap-3 border border-slate-200 rounded-lg p-4 hover:border-orange-300 hover:bg-orange-50/50 transition-colors"
             >
-              <Icon className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
+              <Icon className="h-5 w-5 text-orange-600 mt-0.5 shrink-0" />
               <div>
                 <h3 className="font-semibold text-slate-900">{tool.name}</h3>
                 <p className="text-sm text-slate-500 mt-0.5">

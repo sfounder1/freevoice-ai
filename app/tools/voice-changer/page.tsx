@@ -57,23 +57,23 @@ export default function VoiceChangerPage() {
             </h2>
             <ul className="space-y-2 text-slate-600">
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Pitch control from -12 to +12 semitones
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Speed adjustment from 0.5x to 2.0x
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Reverb and echo effects
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Record directly from your browser
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Upload MP3, WAV, or M4A files
               </li>
             </ul>

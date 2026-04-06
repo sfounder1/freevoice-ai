@@ -56,23 +56,23 @@ export default function TextToSpeechPage() {
             </h2>
             <ul className="space-y-2 text-slate-600">
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 50+ AI voices across multiple languages and accents
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Multiple languages including English, Spanish, Japanese, and more
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Adjustable speech speed from 0.5x to 2.0x
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Download as MP3 for use anywhere
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 No watermark on paid plans
               </li>
             </ul>

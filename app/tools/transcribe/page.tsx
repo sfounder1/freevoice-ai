@@ -56,23 +56,23 @@ export default function TranscribePage() {
             </h2>
             <ul className="space-y-2 text-slate-600">
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 99% accuracy across 50+ languages
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Speaker detection and labeling
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Supports MP3, WAV, M4A, MP4, MOV, and more
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Copy to clipboard or download as .txt
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-blue-600 mt-1">&#10003;</span>
+                <span className="text-orange-600 mt-1">&#10003;</span>
                 Files up to 25MB processed in seconds
               </li>
             </ul>

@@ -5,9 +5,9 @@ export default function Hero() {
     <section className="relative bg-slate-950 text-white overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px]" />
-        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-blue-500/10 rounded-full blur-[80px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[250px] h-[250px] bg-indigo-500/10 rounded-full blur-[80px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-orange-500/10 rounded-full blur-[80px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[250px] h-[250px] bg-orange-400/10 rounded-full blur-[80px]" />
       </div>
 
       {/* Subtle grid pattern */}
@@ -24,13 +24,13 @@ export default function Hero() {
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
           Every AI Voice Tool.
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
             Completely Free.
           </span>
         </h1>
         <p className="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto">
-          Text-to-speech, transcription, voice cloning, and more — all in one
-          place. No credit card required.
+          Text-to-speech, transcription, voice cloning, Emotion Tags, and
+          in-line editing — all in one place. No credit card required.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button href="/tools" size="lg">
@@ -45,8 +45,8 @@ export default function Hero() {
           </Button>
         </div>
         <p className="mt-8 text-sm text-slate-500">
-          &#10022; No signup required &nbsp;&bull;&nbsp; 5,000 free tokens daily
-          &nbsp;&bull;&nbsp; 10+ voice tools
+          &#10022; No signup required &nbsp;&bull;&nbsp; Credits roll over
+          &nbsp;&bull;&nbsp; Quality guaranteed
         </p>
       </div>
     </section>

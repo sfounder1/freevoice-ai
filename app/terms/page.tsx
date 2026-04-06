@@ -121,7 +121,7 @@ export default function TermsPage() {
               For questions about these Terms, contact us at{" "}
               <a
                 href="mailto:hello@freevoice.ai"
-                className="text-blue-600 hover:underline"
+                className="text-orange-600 hover:underline"
               >
                 hello@freevoice.ai
               </a>

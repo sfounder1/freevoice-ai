@@ -98,7 +98,7 @@ export default function ForBusinessesPage() {
               { stat: "$1,200", desc: "average revenue lost per missed call monthly" },
             ].map((item) => (
               <Card key={item.stat} className="p-6 text-center">
-                <p className="text-3xl font-bold text-blue-600">{item.stat}</p>
+                <p className="text-3xl font-bold text-orange-600">{item.stat}</p>
                 <p className="mt-2 text-sm text-slate-500">{item.desc}</p>
               </Card>
             ))}
@@ -135,7 +135,7 @@ export default function ForBusinessesPage() {
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white font-bold text-lg mb-4">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-600 text-white font-bold text-lg mb-4">
                   {item.step}
                 </span>
                 <h3 className="font-semibold text-slate-900 mb-2">
@@ -159,7 +159,7 @@ export default function ForBusinessesPage() {
               const Icon = cap.icon;
               return (
                 <Card key={cap.title} className="p-6">
-                  <Icon className="h-6 w-6 text-blue-600 mb-3" />
+                  <Icon className="h-6 w-6 text-orange-600 mb-3" />
                   <h3 className="font-semibold text-slate-900 mb-1">
                     {cap.title}
                   </h3>
@@ -182,7 +182,7 @@ export default function ForBusinessesPage() {
               const Icon = ind.icon;
               return (
                 <Card key={ind.title} className="p-6">
-                  <Icon className="h-6 w-6 text-blue-600 mb-3" />
+                  <Icon className="h-6 w-6 text-orange-600 mb-3" />
                   <h3 className="font-semibold text-slate-900 mb-1">
                     {ind.title}
                   </h3>
@@ -198,7 +198,7 @@ export default function ForBusinessesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="p-8 text-center">
-            <p className="text-sm font-medium text-blue-600 mb-2">
+            <p className="text-sm font-medium text-orange-600 mb-2">
               Simple Pricing
             </p>
             <p className="text-4xl font-bold text-slate-900">
@@ -208,7 +208,7 @@ export default function ForBusinessesPage() {
             <ul className="mt-6 space-y-3 text-left max-w-sm mx-auto">
               {included.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
                   {item}
                 </li>
               ))}

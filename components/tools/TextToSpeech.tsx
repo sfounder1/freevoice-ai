@@ -51,7 +51,7 @@ export default function TextToSpeech() {
               Text
             </label>
             <textarea
-              className="w-full border border-slate-300 rounded-lg p-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              className="w-full border border-slate-300 rounded-lg p-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
               rows={5}
               placeholder="Type or paste your text here..."
               value={text}
@@ -69,7 +69,7 @@ export default function TextToSpeech() {
                 Voice
               </label>
               <select
-                className="w-full border border-slate-300 rounded-lg p-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-slate-300 rounded-lg p-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 value={voice}
                 onChange={(e) => setVoice(e.target.value)}
               >
@@ -92,7 +92,7 @@ export default function TextToSpeech() {
                 step="0.1"
                 value={speed}
                 onChange={(e) => setSpeed(parseFloat(e.target.value))}
-                className="w-full mt-2 accent-blue-600"
+                className="w-full mt-2 accent-orange-600"
               />
               <div className="flex justify-between text-xs text-slate-400">
                 <span>0.5x</span>

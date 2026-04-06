@@ -6,11 +6,11 @@ import Card from "@/components/ui/Card";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Free AI voice tools with 5,000 daily tokens. Upgrade for more capacity, no watermarks, and API access. Plans start at $9/mo.",
+    "Free AI voice tools with 5,000 daily tokens. Upgrade for more capacity, roll-over credits, draft mode, and API access. Plans start at $9/mo.",
   openGraph: {
     title: "Pricing — FreeVoice.ai",
     description:
-      "Free AI voice tools with 5,000 daily tokens. Upgrade for more capacity.",
+      "Free AI voice tools with 5,000 daily tokens. Unused credits roll over. Quality guaranteed.",
     url: "https://freevoice.ai/pricing",
   },
   alternates: { canonical: "https://freevoice.ai/pricing" },
@@ -25,7 +25,7 @@ const tiers = [
     features: [
       "5,000 tokens daily",
       "All tools available",
-      "Watermark on exports",
+      "Draft mode previews",
       "Standard processing",
     ],
     cta: "Start Free",
@@ -40,9 +40,11 @@ const tiers = [
     description: "For content creators",
     features: [
       "500,000 tokens monthly",
+      "Unused credits roll over",
       "No watermarks",
+      "In-line editing & Emotion Tags",
+      "Quality Guarantee",
       "Priority processing",
-      "Usage history",
     ],
     cta: "Coming Soon",
     ctaHref: "#",
@@ -56,8 +58,10 @@ const tiers = [
     description: "For professionals and teams",
     features: [
       "2,000,000 tokens monthly",
+      "Unused credits roll over",
       "API access",
       "Commercial license",
+      "Noise-resilient voice cloning",
       "No daily limits",
     ],
     cta: "Coming Soon",
@@ -76,7 +80,7 @@ export default function PricingPage() {
             Simple, Transparent Pricing
           </h1>
           <p className="mt-3 text-lg text-slate-500">
-            Start free. Upgrade when you need more.
+            Start free. Upgrade when you need more. Unused credits always roll over.
           </p>
         </div>
 
@@ -86,12 +90,12 @@ export default function PricingPage() {
               key={tier.name}
               className={`p-8 flex flex-col ${
                 tier.highlighted
-                  ? "ring-2 ring-blue-600 relative"
+                  ? "ring-2 ring-orange-600 relative"
                   : ""
               }`}
             >
               {tier.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-medium px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-xs font-medium px-3 py-1 rounded-full">
                   Recommended
                 </span>
               )}
@@ -111,7 +115,7 @@ export default function PricingPage() {
                     key={feature}
                     className="flex items-start gap-2 text-sm text-slate-600"
                   >
-                    <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
                     {feature}
                   </li>
                 ))}
@@ -130,8 +134,20 @@ export default function PricingPage() {
           ))}
         </div>
 
-        {/* Token Packs */}
+        {/* Quality Guarantee */}
         <div className="mt-16 max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+            Quality Guarantee
+          </h2>
+          <p className="text-slate-500">
+            Bad generation? We refund your credits automatically. Use Draft Mode
+            to preview timing and tone at zero cost before committing to a
+            high-fidelity export.
+          </p>
+        </div>
+
+        {/* Token Packs */}
+        <div className="mt-12 max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Need more? Token Packs
           </h2>

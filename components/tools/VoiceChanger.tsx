@@ -258,7 +258,7 @@ export default function VoiceChanger() {
             {!recording && !recordedUrl && !file && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div
-                  className="border-2 border-dashed border-slate-300 rounded-lg p-6 text-center cursor-pointer hover:border-blue-400 transition-colors"
+                  className="border-2 border-dashed border-slate-300 rounded-lg p-6 text-center cursor-pointer hover:border-orange-400 transition-colors"
                   onClick={() => inputRef.current?.click()}
                   onDragOver={(e) => e.preventDefault()}
                   onDrop={handleDrop}
@@ -314,7 +314,7 @@ export default function VoiceChanger() {
             {(file || recordedUrl) && !recording && (
               <div className="border border-slate-200 rounded-lg p-4">
                 <div className="flex items-center gap-3">
-                  <FileAudio className="h-5 w-5 text-blue-600" />
+                  <FileAudio className="h-5 w-5 text-orange-600" />
                   <span className="text-sm text-slate-700 font-medium flex-1">
                     {file ? file.name : "Recorded audio"}
                   </span>
@@ -360,7 +360,7 @@ export default function VoiceChanger() {
                 step="1"
                 value={pitch}
                 onChange={(e) => setPitch(parseInt(e.target.value))}
-                className="w-full accent-blue-600"
+                className="w-full accent-orange-600"
               />
               <div className="flex justify-between text-xs text-slate-400">
                 <span>-12</span>
@@ -380,7 +380,7 @@ export default function VoiceChanger() {
                 step="0.1"
                 value={speed}
                 onChange={(e) => setSpeed(parseFloat(e.target.value))}
-                className="w-full accent-blue-600"
+                className="w-full accent-orange-600"
               />
               <div className="flex justify-between text-xs text-slate-400">
                 <span>0.5x</span>
@@ -395,7 +395,7 @@ export default function VoiceChanger() {
                 type="checkbox"
                 checked={reverb}
                 onChange={(e) => setReverb(e.target.checked)}
-                className="rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                className="rounded border-slate-300 text-orange-600 focus:ring-orange-500"
               />
               <span className="text-sm text-slate-700">Reverb</span>
             </label>
@@ -404,7 +404,7 @@ export default function VoiceChanger() {
                 type="checkbox"
                 checked={echo}
                 onChange={(e) => setEcho(e.target.checked)}
-                className="rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                className="rounded border-slate-300 text-orange-600 focus:ring-orange-500"
               />
               <span className="text-sm text-slate-700">Echo</span>
             </label>

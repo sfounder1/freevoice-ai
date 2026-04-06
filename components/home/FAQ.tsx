@@ -10,14 +10,29 @@ const faqs = [
       "Yes, you get 5,000 tokens daily. No signup required. Paid plans are available for heavy users who need more capacity.",
   },
   {
-    question: "What are tokens?",
+    question: "What are tokens and do they roll over?",
     answer:
-      "Tokens are our universal credit system. Each tool costs a small number of tokens per use. Free users get 5,000 tokens refreshed daily.",
+      "Tokens are our universal credit system. Each tool costs a small number of tokens per use. Free users get 5,000 tokens refreshed daily. On paid plans, unused credits roll over to the next month — no \"use it or lose it\" limits.",
+  },
+  {
+    question: "What happens if the AI generates something bad?",
+    answer:
+      "We offer a Quality Guarantee. If a generation glitches or mispronounces a word, your credits are refunded automatically. You can also use Draft Mode to preview timing and tone at zero cost before committing to a full export.",
   },
   {
     question: "What voice AI tools do you offer?",
     answer:
-      "Text-to-speech with 50+ voices, audio transcription, voice changer, and more tools launching regularly.",
+      "Text-to-speech with 50+ voices, audio transcription, voice changer, in-line editing (re-generate just one word, not the whole file), Emotion Tags for expressive speech, and more tools launching regularly.",
+  },
+  {
+    question: "What are Emotion Tags?",
+    answer:
+      "Emotion Tags let you highlight any word or phrase and apply expressive styles like [whisper], [angry], [sarcastic], or [excited] — without re-generating the entire file. It turns text-to-speech into text-to-performance.",
+  },
+  {
+    question: "How do you handle my voice data and privacy?",
+    answer:
+      "We are 100% transparent about where processing happens. Your voice data is processed securely and never shared with third parties. We publish clear documentation on our data handling practices.",
   },
   {
     question: "Do you offer AI voice agents for businesses?",

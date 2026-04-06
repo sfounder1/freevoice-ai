@@ -14,8 +14,8 @@ export default function ToolCard({ tool }: ToolCardProps) {
   const content = (
     <Card className={`p-6 flex flex-col h-full ${!isActive ? "opacity-60" : "hover:shadow-md transition-shadow"}`}>
       <div className="flex items-start justify-between mb-4">
-        <div className="p-2 bg-blue-50 rounded-lg">
-          <Icon className="h-5 w-5 text-blue-600" />
+        <div className="p-2 bg-orange-50 rounded-lg">
+          <Icon className="h-5 w-5 text-orange-600" />
         </div>
         {!isActive && (
           <span className="text-xs font-medium bg-slate-100 text-slate-500 px-2 py-1 rounded-full">

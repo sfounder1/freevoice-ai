@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           <div>
             <Link href="/" className="flex items-center gap-2 text-white">
-              <AudioWaveform className="h-5 w-5 text-blue-500" />
+              <AudioWaveform className="h-5 w-5 text-orange-500" />
               <span className="font-bold">FreeVoice.ai</span>
             </Link>
             <p className="mt-2 text-sm max-w-xs">
@@ -97,7 +97,7 @@ export default function Footer() {
             </h3>
             <a
               href="mailto:hello@freevoice.ai"
-              className="text-blue-600 hover:underline text-lg"
+              className="text-orange-600 hover:underline text-lg"
             >
               hello@freevoice.ai
             </a>
