@@ -161,14 +161,15 @@ export default function PricingPage() {
         <div className="mt-16 max-w-2xl mx-auto">
           <Card className="p-8 text-center">
             <h2 className="text-xl font-bold text-slate-900">
-              AI Voice Agents for Business
+              AI Voice Agent for Real Estate
             </h2>
             <p className="mt-1 text-3xl font-bold text-slate-900">
-              $199<span className="text-base font-normal text-slate-500">/mo</span>
+              $450<span className="text-base font-normal text-slate-500">/mo</span>
             </p>
+            <p className="text-sm text-slate-500">+ $250 one-time setup</p>
             <p className="mt-3 text-sm text-slate-500">
-              AI receptionist that answers calls 24/7, books appointments, and
-              handles FAQs for your business.
+              AI voice agent that answers calls 24/7, qualifies leads, and
+              books showings — built for real estate agents and brokers.
             </p>
             <div className="mt-6">
               <Button href="/for-businesses">Learn More &rarr;</Button>

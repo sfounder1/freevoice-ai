@@ -1,7 +1,7 @@
 # FreeVoice.ai
 
 ## What This Is
-A freemium AI voice tools platform. Every AI voice tool, completely free. Users get daily free tokens; paid plans unlock more usage with roll-over credits. We also offer B2B AI voice agents for small businesses.
+A freemium AI voice tools platform. Every AI voice tool, completely free. Users get daily free tokens; paid plans unlock more usage with roll-over credits. We also offer a B2B AI voice agent service specifically for real estate agents and brokers in the USA ($250 setup + $450/mo).
 
 ## Tech Stack
 Next.js 14 (App Router), TypeScript, Tailwind CSS, deployed on Netlify.
