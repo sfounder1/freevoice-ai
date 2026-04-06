@@ -39,7 +39,7 @@ export default function Hero() {
           <Button
             href="/for-businesses"
             size="lg"
-            className="bg-white text-slate-900 hover:bg-slate-100"
+            className="bg-white !text-black hover:bg-slate-100"
           >
             AI Voice Agents for Business
           </Button>
