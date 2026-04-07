@@ -41,7 +41,7 @@ export default function Hero() {
             size="lg"
             className="bg-white !text-black hover:bg-slate-100"
           >
-            AI Voice Agents for Business
+            AI Voice Agent For Real Estate Brokers
           </Button>
         </div>
         <p className="mt-8 text-sm text-slate-500">

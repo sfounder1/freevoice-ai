@@ -18,6 +18,7 @@ import {
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import WaitlistForm from "@/components/b2b/WaitlistForm";
+import ClaimModal from "@/components/b2b/ClaimModal";
 
 export const metadata: Metadata = {
   title: "AI Voice Agent for Real Estate Agents & Brokers | Never Lose a Lead Again",
@@ -346,13 +347,9 @@ export default function ForBusinessesPage() {
                 ))}
               </ul>
               <div className="mt-8">
-                <Button
-                  href="mailto:shehryar@freevoice.ai?subject=First Month Free — Real Estate AI Agent"
-                  size="lg"
-                  className="w-full"
-                >
+                <ClaimModal className="w-full px-6 py-3 text-base inline-flex items-center justify-center font-medium rounded-lg transition-colors bg-orange-600 text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
                   Claim Free Month &rarr;
-                </Button>
+                </ClaimModal>
               </div>
             </Card>
 
@@ -419,12 +416,9 @@ export default function ForBusinessesPage() {
             one. First month free — get set up in 48 hours.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              href="mailto:shehryar@freevoice.ai?subject=First Month Free — Real Estate AI Agent"
-              size="lg"
-            >
+            <ClaimModal className="px-6 py-3 text-base inline-flex items-center justify-center font-medium rounded-lg transition-colors bg-orange-600 text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
               Claim Your Free Month
-            </Button>
+            </ClaimModal>
           </div>
           <p className="mt-6 text-sm text-slate-500">
             Or email us:{" "}
