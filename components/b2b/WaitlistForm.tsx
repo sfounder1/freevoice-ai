@@ -20,7 +20,7 @@ export default function WaitlistForm() {
           access_key: "462c9f53-3c77-4871-9cbc-bf728f4e4005",
           name,
           email,
-          subject: "New B2B Waitlist Signup — Real Estate AI Voice Agent",
+          subject: "New B2B Waitlist Signup — Auto Insurance AI Voice Agent",
           from_name: "FreeVoice.ai Waitlist",
         }),
       });

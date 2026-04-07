@@ -5,12 +5,12 @@ export default function BusinessCTA() {
     <section className="py-20 bg-slate-950 text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold">
-          AI Voice Agent for Real Estate.
+          AI Voice Agent for Auto Insurance Agents.
         </h2>
         <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
           Never lose a lead to voicemail again. Our AI voice agent answers calls
-          24/7, qualifies buyers and sellers, and books showings — so you close
-          more deals.
+          24/7, qualifies prospects, and books consultations — so you write
+          more policies.
         </p>
         <div className="mt-8">
           <Button href="/for-businesses" size="lg">
@@ -18,7 +18,7 @@ export default function BusinessCTA() {
           </Button>
         </div>
         <p className="mt-6 text-sm text-slate-500">
-          $250 Setup &bull; $450/mo &bull; No contracts &bull; Cancel anytime
+          $250 Setup &bull; $500/mo &bull; No contracts &bull; Cancel anytime
         </p>
       </div>
     </section>

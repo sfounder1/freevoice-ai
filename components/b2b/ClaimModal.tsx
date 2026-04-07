@@ -26,7 +26,7 @@ export default function ClaimModal({ children, className = "" }: ClaimModalProps
           access_key: "462c9f53-3c77-4871-9cbc-bf728f4e4005",
           name,
           email,
-          subject: "Claim First Month Free — Real Estate AI Voice Agent",
+          subject: "Claim First Month Free — Auto Insurance AI Voice Agent",
           from_name: "FreeVoice.ai",
         }),
       });
@@ -113,7 +113,7 @@ export default function ClaimModal({ children, className = "" }: ClaimModalProps
                   </button>
                 </form>
                 <p className="text-xs text-slate-400 text-center mt-4">
-                  First month $0. Then $450/mo. Cancel anytime.
+                  First month $0. Then $500/mo. Cancel anytime.
                 </p>
               </>
             )}
