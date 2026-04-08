@@ -23,7 +23,7 @@ import ClaimModal from "@/components/b2b/ClaimModal";
 export const metadata: Metadata = {
   title: "AI Voice Agent for Auto Insurance Agents | Never Lose a Lead Again",
   description:
-    "24/7 AI voice agent built for auto insurance agents. Captures every lead, qualifies drivers, books quote appointments, and follows up — so you sell more car insurance. $250 setup + $500/mo.",
+    "24/7 AI voice agent built for auto insurance agents. Captures every lead, qualifies drivers, books quote appointments, and follows up — so you sell more car insurance. $250 setup + $475/mo.",
   keywords: [
     "AI voice agent auto insurance",
     "car insurance AI answering service",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Voice Agent for Auto Insurance Agents — FreeVoice.ai",
     description:
-      "Stop losing leads to voicemail. Our AI voice agent answers every call 24/7, qualifies drivers, and books quote appointments — built specifically for agents who sell car insurance. $250 setup + $500/mo.",
+      "Stop losing leads to voicemail. Our AI voice agent answers every call 24/7, qualifies drivers, and books quote appointments — built specifically for agents who sell car insurance. $250 setup + $475/mo.",
     url: "https://freevoice.ai/for-businesses",
   },
   alternates: { canonical: "https://freevoice.ai/for-businesses" },
@@ -140,7 +140,7 @@ export default function ForBusinessesPage() {
             </Button>
           </div>
           <p className="mt-6 text-sm text-slate-500">
-            $250 Setup Fee &bull; $500/mo &bull; No contracts &bull; Cancel anytime
+            $250 Setup Fee &bull; $475/mo &bull; No contracts &bull; Cancel anytime
           </p>
         </div>
       </section>
@@ -288,7 +288,7 @@ export default function ForBusinessesPage() {
             10&ndash;15% commission, every new driver you insure earns you
             $250&ndash;$375 annually — and they renew year after year. If your AI
             agent captures just 2&ndash;3 extra drivers per month, it more than
-            pays for itself. Your AI agent costs $500/mo.
+            pays for itself. Your AI agent costs $475/mo.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <Card className="p-6 text-center">
@@ -334,7 +334,7 @@ export default function ForBusinessesPage() {
               </p>
               <p className="text-slate-500 mt-1 text-sm">+ $250 one-time setup fee</p>
               <p className="mt-3 text-xs text-slate-400">
-                Then $500/mo &bull; Cancel anytime
+                Then $475/mo &bull; Cancel anytime
               </p>
               <ul className="mt-6 space-y-3 text-left">
                 {included.map((item) => (
@@ -360,7 +360,7 @@ export default function ForBusinessesPage() {
                 Regular Price
               </p>
               <p className="text-5xl font-bold text-slate-900">
-                $500<span className="text-lg font-normal text-slate-500">/mo</span>
+                $475<span className="text-lg font-normal text-slate-500">/mo</span>
               </p>
               <p className="text-slate-500 mt-1 text-sm">+ $250 one-time setup fee</p>
               <p className="mt-3 text-xs text-slate-400">

@@ -1,7 +1,7 @@
 # FreeVoice.ai
 
 ## What This Is
-A freemium AI voice tools platform. Every AI voice tool, completely free. Users get daily free tokens; paid plans unlock more usage with roll-over credits. We also offer a B2B AI voice agent service specifically for auto insurance agents and agencies in the USA ($250 setup + $500/mo, first month free limited time offer).
+A freemium AI voice tools platform. Every AI voice tool, completely free. Users get daily free tokens; paid plans unlock more usage with roll-over credits. We also offer a B2B AI voice agent service specifically for auto insurance agents and agencies in the USA ($250 setup + $475/mo, first month free limited time offer).
 
 ## Tech Stack
 Next.js 14 (App Router), TypeScript, Tailwind CSS, deployed on Netlify.

@@ -164,7 +164,7 @@ export default function PricingPage() {
               AI Voice Agent for Auto Insurance Agents
             </h2>
             <p className="mt-1 text-3xl font-bold text-slate-900">
-              $500<span className="text-base font-normal text-slate-500">/mo</span>
+              $475<span className="text-base font-normal text-slate-500">/mo</span>
             </p>
             <p className="text-sm text-slate-500">+ $250 one-time setup</p>
             <p className="mt-3 text-sm text-slate-500">

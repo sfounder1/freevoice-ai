@@ -113,7 +113,7 @@ export default function ClaimModal({ children, className = "" }: ClaimModalProps
                   </button>
                 </form>
                 <p className="text-xs text-slate-400 text-center mt-4">
-                  First month $0. Then $500/mo. Cancel anytime.
+                  First month $0. Then $475/mo. Cancel anytime.
                 </p>
               </>
             )}

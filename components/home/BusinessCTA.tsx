@@ -18,7 +18,7 @@ export default function BusinessCTA() {
           </Button>
         </div>
         <p className="mt-6 text-sm text-slate-500">
-          $250 Setup &bull; $500/mo &bull; No contracts &bull; Cancel anytime
+          $250 Setup &bull; $475/mo &bull; No contracts &bull; Cancel anytime
         </p>
       </div>
     </section>
