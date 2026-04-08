@@ -165,7 +165,7 @@ export default function ForBusinessesPage() {
                 desc: "of calls to insurance agencies go unanswered after business hours when drivers are free to shop",
               },
               {
-                stat: "$1,771",
+                stat: "$2,500+",
                 desc: "average annual car insurance premium in the U.S. — every missed call is real revenue lost",
               },
             ].map((item) => (
@@ -284,10 +284,10 @@ export default function ForBusinessesPage() {
             The Math Is Simple
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto mb-8">
-            The average U.S. car insurance premium is $1,771/year. With a
+            The average U.S. car insurance premium now exceeds $2,500/year. With a
             10&ndash;15% commission, every new driver you insure earns you
-            $177&ndash;$265 annually — and they renew year after year. If your AI
-            agent captures just 3&ndash;4 extra drivers per month, it more than
+            $250&ndash;$375 annually — and they renew year after year. If your AI
+            agent captures just 2&ndash;3 extra drivers per month, it more than
             pays for itself. Your AI agent costs $500/mo.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
