@@ -161,7 +161,7 @@ export default function ForBusinessesPage() {
                 desc: "of drivers request quotes from multiple agents — the fastest response wins the sale",
               },
               {
-                stat: "62%",
+                stat: "30%",
                 desc: "of calls to insurance agencies go unanswered after business hours when drivers are free to shop",
               },
               {
