@@ -168,8 +168,9 @@ export default function PricingPage() {
             </p>
             <p className="text-sm text-slate-500">+ $250 one-time setup</p>
             <p className="mt-3 text-sm text-slate-500">
-              AI voice agent that answers calls 24/7, qualifies prospects, and
-              books consultations — built for auto insurance agents and agencies.
+              AI voice agent that answers calls 24/7, qualifies drivers shopping
+              for car insurance, and books quote appointments — built for auto
+              insurance agents and agencies.
             </p>
             <div className="mt-6">
               <Button href="/for-businesses">Learn More &rarr;</Button>

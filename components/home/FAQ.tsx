@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "Do you offer AI voice agents for businesses?",
     answer:
-      "Yes. Our AI voice agent answers calls 24/7, qualifies prospects, books consultations, and handles FAQs for your business. Built for auto insurance agents at $500/mo with a $250 one-time setup fee. First month is free for a limited time.",
+      "Yes. Our AI voice agent answers calls 24/7, qualifies drivers looking for car insurance, books quote appointments, and handles coverage questions for your agency. Built for auto insurance agents at $500/mo with a $250 one-time setup fee. First month is free for a limited time.",
   },
   {
     question: "Do I need to sign up?",

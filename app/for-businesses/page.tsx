@@ -23,23 +23,23 @@ import ClaimModal from "@/components/b2b/ClaimModal";
 export const metadata: Metadata = {
   title: "AI Voice Agent for Auto Insurance Agents | Never Lose a Lead Again",
   description:
-    "24/7 AI voice agent built for auto insurance agents. Captures every lead, qualifies prospects, books consultations, and follows up — so you never miss a policy. $250 setup + $500/mo.",
+    "24/7 AI voice agent built for auto insurance agents. Captures every lead, qualifies drivers, books quote appointments, and follows up — so you sell more car insurance. $250 setup + $500/mo.",
   keywords: [
     "AI voice agent auto insurance",
-    "auto insurance AI answering service",
+    "car insurance AI answering service",
     "AI receptionist for insurance agents",
-    "insurance lead capture AI",
-    "24/7 insurance phone answering",
-    "AI for insurance agencies",
-    "insurance virtual receptionist",
-    "never miss an insurance lead",
-    "AI call handling insurance",
-    "auto insurance AI assistant",
+    "auto insurance lead capture AI",
+    "24/7 car insurance phone answering",
+    "AI for car insurance agencies",
+    "vehicle insurance virtual receptionist",
+    "never miss a car insurance lead",
+    "AI call handling car insurance",
+    "auto insurance sales AI assistant",
   ],
   openGraph: {
     title: "AI Voice Agent for Auto Insurance Agents — FreeVoice.ai",
     description:
-      "Stop losing leads to voicemail. Our AI voice agent answers every call 24/7, qualifies prospects, and books consultations — built specifically for auto insurance agents. $250 setup + $500/mo.",
+      "Stop losing leads to voicemail. Our AI voice agent answers every call 24/7, qualifies drivers, and books quote appointments — built specifically for agents who sell car insurance. $250 setup + $500/mo.",
     url: "https://freevoice.ai/for-businesses",
   },
   alternates: { canonical: "https://freevoice.ai/for-businesses" },
@@ -49,32 +49,32 @@ const capabilities = [
   {
     icon: PhoneIncoming,
     title: "Answers Every Call 24/7",
-    desc: "Nights, weekends, holidays — your AI agent picks up instantly so no lead goes to voicemail.",
+    desc: "Nights, weekends, holidays — your AI agent picks up instantly so no driver looking for coverage goes to voicemail.",
   },
   {
     icon: UserCheck,
-    title: "Qualifies Prospects",
-    desc: "Asks the right questions — vehicle info, current coverage, driving history, and coverage needs — and tags each lead.",
+    title: "Qualifies Every Caller",
+    desc: "Asks the right questions — vehicle type, driving record, current coverage, and what protection they need — and tags each lead for you.",
   },
   {
     icon: CalendarCheck,
-    title: "Books Consultations & Appointments",
-    desc: "Checks your availability and schedules quote consultations or policy review appointments directly into your calendar.",
+    title: "Books Quote Appointments",
+    desc: "Checks your availability and schedules quote consultations directly into your calendar so you can close the sale.",
   },
   {
     icon: MessageCircleQuestion,
-    title: "Answers Insurance Questions",
-    desc: "Handles common inquiries about coverage options, deductibles, bundling discounts, filing claims, and policy details.",
+    title: "Answers Coverage Questions",
+    desc: "Handles common inquiries about collision, comprehensive, liability, uninsured motorist, deductibles, and bundling discounts.",
   },
   {
     icon: MessageSquare,
     title: "Sends SMS Follow-Ups",
-    desc: "Texts callers with quote request confirmations, your contact info, and appointment reminders after every call.",
+    desc: "Texts callers with quote confirmations, your contact info, and appointment reminders after every call.",
   },
   {
     icon: FileText,
     title: "Full Call Transcripts & Logs",
-    desc: "Every conversation recorded and transcribed. Review lead details, call summaries, and follow-up notes anytime.",
+    desc: "Every conversation recorded and transcribed. Review lead details, vehicle info, call summaries, and follow-up notes anytime.",
   },
 ];
 
@@ -82,33 +82,33 @@ const painPoints = [
   {
     icon: Shield,
     title: "Independent Agents",
-    desc: "You're meeting a client at 2 PM when a hot lead calls for a quote. Without an AI agent, that prospect calls the next agency on Google.",
+    desc: "You're quoting a client at 2 PM when a driver who just bought a new car calls for coverage. Without an AI agent, that prospect calls the next agency on Google.",
   },
   {
     icon: Building2,
     title: "Insurance Agencies",
-    desc: "Your agents are on calls and in meetings all day. Leads from your website, ads, and referrals go unanswered — costing your agency thousands monthly.",
+    desc: "Your team is on calls all day. Drivers shopping for car insurance from your website, ads, and referrals go unanswered — costing your agency thousands monthly.",
   },
   {
     icon: Users,
     title: "Multi-Agent Offices",
-    desc: "Coordinating who answers what call is a mess. Your AI agent handles intake for the whole team and routes leads to the right agent.",
+    desc: "Coordinating who answers what call is a mess. Your AI agent handles intake for the whole team and routes drivers to the right agent.",
   },
   {
     icon: Car,
-    title: "High-Volume Auto Specialists",
-    desc: "Quote requests, policy renewals, and claims inquiries pile up. Your AI agent handles the volume so your team stays focused on closing.",
+    title: "High-Volume Auto Agencies",
+    desc: "Quote requests from new drivers, renewal inquiries, and coverage questions pile up. Your AI agent handles the volume so your team stays focused on selling.",
   },
 ];
 
 const included = [
-  "Custom AI agent trained on your insurance products and services",
+  "Custom AI agent trained on your coverage options and carrier products",
   "Dedicated local or toll-free phone number",
   "24/7 call handling — nights, weekends, holidays",
-  "Lead qualification (vehicle info, coverage needs, driving history)",
-  "Automated SMS follow-ups to callers",
+  "Lead qualification (vehicle type, driving record, coverage needs)",
+  "Automated SMS follow-ups to every caller",
   "Call logs, transcripts, and lead dashboard",
-  "Calendar integration for booking consultations",
+  "Calendar integration for booking quote appointments",
   "Weekly performance and lead reports",
 ];
 
@@ -127,9 +127,9 @@ export default function ForBusinessesPage() {
             to Voicemail.
           </h1>
           <p className="mt-6 text-lg text-slate-400 max-w-2xl mx-auto">
-            Your AI voice agent answers every call 24/7 — qualifying prospects,
-            booking quote consultations, and capturing lead details — so you
-            write more policies while you&apos;re focused on your clients.
+            Your AI voice agent answers every call 24/7 — qualifying drivers,
+            booking quote appointments, and capturing lead details — so you
+            sell more car insurance while you&apos;re focused on your clients.
           </p>
           <div className="mt-8">
             <Button
@@ -149,24 +149,24 @@ export default function ForBusinessesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            Every Missed Call Is a Lost Policy
+            Every Missed Call Is a Lost Customer
           </h2>
           <p className="text-center text-slate-500 max-w-2xl mx-auto mb-12">
-            In auto insurance, speed wins. The agent who answers first gets the client.
+            Drivers shop fast. The agent who answers first gets the sale.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {[
               {
                 stat: "88%",
-                desc: "of insurance shoppers request quotes from multiple agents — the fastest response wins",
+                desc: "of drivers request quotes from multiple agents — the fastest response wins the sale",
               },
               {
                 stat: "62%",
-                desc: "of calls to insurance agencies go unanswered after business hours",
+                desc: "of calls to insurance agencies go unanswered after business hours when drivers are free to shop",
               },
               {
-                stat: "$1,200+",
-                desc: "average lifetime value of an auto insurance client over a 5-year retention period",
+                stat: "$1,771",
+                desc: "average annual car insurance premium in the U.S. — every missed call is real revenue lost",
               },
             ].map((item) => (
               <Card key={item.stat} className="p-6 text-center">
@@ -178,8 +178,8 @@ export default function ForBusinessesPage() {
             ))}
           </div>
           <p className="text-center text-slate-600 max-w-2xl mx-auto">
-            You&apos;re in a client meeting, reviewing a claim, or on a call.
-            Your phone rings — and goes to voicemail. That prospect just called the
+            You&apos;re in a meeting, quoting another driver, or off for the day.
+            Your phone rings — and goes to voicemail. That driver just called the
             next agency. Our AI voice agent makes sure that never happens.
           </p>
         </div>
@@ -192,8 +192,8 @@ export default function ForBusinessesPage() {
             Built for Every Type of Auto Insurance Professional
           </h2>
           <p className="text-center text-slate-500 max-w-2xl mx-auto mb-12">
-            Whether you&apos;re an independent agent or run a 20-person agency, our AI
-            agent scales with you.
+            Whether you&apos;re an independent agent or run a 20-person agency
+            selling car insurance, our AI agent scales with you.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {painPoints.map((point) => {
@@ -223,17 +223,17 @@ export default function ForBusinessesPage() {
               {
                 step: "1",
                 title: "Share Your Agency Details",
-                desc: "Tell us about your coverage options, carriers, service areas, FAQs, and how you want leads qualified.",
+                desc: "Tell us about your coverage options (liability, collision, comprehensive, theft), carriers, service areas, and how you want leads qualified.",
               },
               {
                 step: "2",
                 title: "We Build Your AI Agent",
-                desc: "We train a custom voice agent that knows your products, speaks naturally, and follows your exact scripts.",
+                desc: "We train a custom voice agent that knows your products, explains coverage to drivers naturally, and follows your exact process.",
               },
               {
                 step: "3",
                 title: "Every Call Gets Answered",
-                desc: "Forward your agency line or get a new number. Every lead captured, every consultation booked — 24/7.",
+                desc: "Forward your agency line or get a new number. Every driver captured, every quote appointment booked — 24/7.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
@@ -284,10 +284,11 @@ export default function ForBusinessesPage() {
             The Math Is Simple
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto mb-8">
-            If your AI agent captures just two extra leads per month that turn
-            into written policies, it pays for itself. The average auto insurance
-            policy generates $1,500&ndash;$2,000 in annual premium with
-            10&ndash;15% commission on new business. Your AI agent costs $500/mo.
+            The average U.S. car insurance premium is $1,771/year. With a
+            10&ndash;15% commission, every new driver you insure earns you
+            $177&ndash;$265 annually — and they renew year after year. If your AI
+            agent captures just 3&ndash;4 extra drivers per month, it more than
+            pays for itself. Your AI agent costs $500/mo.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <Card className="p-6 text-center">
@@ -302,8 +303,8 @@ export default function ForBusinessesPage() {
             </Card>
             <Card className="p-6 text-center">
               <TrendingUp className="h-6 w-6 text-orange-600 mx-auto mb-2" />
-              <p className="text-2xl font-bold text-slate-900">3&ndash;6x</p>
-              <p className="text-sm text-slate-500">ROI per new policy</p>
+              <p className="text-2xl font-bold text-slate-900">3&ndash;5x</p>
+              <p className="text-sm text-slate-500">ROI within 6 months</p>
             </Card>
           </div>
         </div>
@@ -409,11 +410,11 @@ export default function ForBusinessesPage() {
       <section className="py-20 bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold">
-            Ready to Capture Every Lead?
+            Ready to Capture Every Driver?
           </h2>
           <p className="mt-4 text-slate-400 max-w-xl mx-auto">
-            While you&apos;re closing policies, your AI agent is answering the next
-            one. First month free — get set up in 48 hours.
+            While you&apos;re closing sales, your AI agent is answering the next
+            driver looking for car insurance. First month free — get set up in 48 hours.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <ClaimModal className="px-6 py-3 text-base inline-flex items-center justify-center font-medium rounded-lg transition-colors bg-orange-600 text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">

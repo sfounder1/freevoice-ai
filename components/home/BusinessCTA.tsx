@@ -9,8 +9,8 @@ export default function BusinessCTA() {
         </h2>
         <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
           Never lose a lead to voicemail again. Our AI voice agent answers calls
-          24/7, qualifies prospects, and books consultations — so you write
-          more policies.
+          24/7, qualifies drivers, and books quote appointments — so you sell
+          more car insurance.
         </p>
         <div className="mt-8">
           <Button href="/for-businesses" size="lg">
